@@ -1,0 +1,40 @@
+<div class="p-10 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Header -->
+    <h1 class="font-bold text-center text-4xl text-gray-800 mb-12">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            RxJS Operators
+        </span>
+    </h1>
+
+    <!-- Operator Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+        @for (item of operatorType; track $index) {
+        <div class="group h-40 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl 
+        transition-all duration-300 cursor-pointer flex flex-col justify-center items-center relative overflow-hidden"
+             [routerLink]="[item.url]">
+            <!-- Background Gradient on Hover -->
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 
+            group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
+            
+            <!-- Icon -->
+            <svg class="w-10 h-10 text-blue-600 mb-3 group-hover:text-purple-600 transition-colors duration-300 z-10 relative" 
+            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            
+            <!-- Operator Name -->
+            <h3 class="text-center text-xl font-semibold text-gray-700 group-hover:text-gray-800 transition-colors duration-300 uppercase z-10 relative">
+                {{item.name}}
+            </h3>
+        </div>
+        }
+    </div>
+
+    <!-- Divider -->
+    <div class="border-b-2 border-gray-200 mb-12"></div>
+
+    <!-- Router Outlet Section -->
+    <div class="bg-white p-8 rounded-xl shadow-lg">
+        <router-outlet></router-outlet>
+    </div>
+</div>
