@@ -1,0 +1,78 @@
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">ExhaustMap </h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for Buffer Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the ExhaustMap Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">ExhaustMap </span> operator in RxJS is particularly useful for
+            scenarios where you want to ignore new emissions from the source observable while the current inner
+            observable is still active. It is often used to handle situations like preventing multiple form submissions,
+            avoiding duplicate HTTP requests, or ignoring new events until the current one is processed.
+        </p>
+
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/exhaustMap.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-1">
+            <b>Common Use Cases:</b>
+            <ul>
+                <li class="text-gray-700 leading-relaxed">Ensure that only one HTTP request is active at a time,
+                    ignoring subsequent requests until the current one completes.</li>
+                <li class="text-gray-700 leading-relaxed">Prevent multiple form submissions while the current submission
+                    is being processed.</li>
+                <li class="text-gray-700 leading-relaxed">Ignore new events (e.g., clicks, keystrokes) until the current
+                    event is fully processed.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Example Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Example</h4>
+        <p class="text-gray-600 leading-relaxed mb-4">
+            In this example, we use the <span class="font-medium text-blue-600">ExhaustMap </span>
+            Imagine you have a button that triggers an HTTP request when clicked. You want to ensure that if the button
+            is clicked multiple times in quick succession, only the first click triggers the request, and subsequent
+            clicks are ignored until the request completes.
+        </p>
+
+        <div class="flex gap-4">
+            <div class="flex gap-2">
+                <button #start
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Start
+                </button>
+            </div>
+            <button (click)="stopOperator()"
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Stop
+            </button>
+        </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="mt-6">
+        <h3 class="text-xl font-semibold text-gray-800">Result:</h3>
+        <div class="mt-4 p-4 bg-white rounded-lg shadow-inner">
+            @if(isProcessing()){
+            <h1 class="text-gray-700 font-medium">Processing...</h1>
+            <h2 class="text-gray-700 font-medium">Yoyr multiple clicks on start button will be ignore. While processing current request</h2>
+            }@else {
+                <h5 class="text-gray-700 font-medium">{{ value }}</h5>
+            }
+        </div>
+    </div>
+</div>
