@@ -25,16 +25,30 @@
             <a href="https://rxjs.dev/assets/images/marble-diagrams/exhaustMap.png" target="_blank"
                 class="text-blue-600">Link</a>
         </div>
-
-        <div class="mb-1">
-            <b>Common Use Cases:</b>
-            <ul>
-                <li class="text-gray-700 leading-relaxed">Ensure that only one HTTP request is active at a time,
-                    ignoring subsequent requests until the current one completes.</li>
-                <li class="text-gray-700 leading-relaxed">Prevent multiple form submissions while the current submission
-                    is being processed.</li>
-                <li class="text-gray-700 leading-relaxed">Ignore new events (e.g., clicks, keystrokes) until the current
-                    event is fully processed.</li>
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Ensure Single Active HTTP Request:</strong> Ensure that only one
+                        HTTP request is active at a time, ignoring subsequent requests until the current one completes.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Prevent Multiple Form Submissions:</strong> Prevent multiple form
+                        submissions while the current submission is being processed.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Ignore New Events:</strong> Ignore new events (e.g., clicks,
+                        keystrokes) until the current event is fully processed.
+                    </span>
+                </li>
             </ul>
         </div>
     </div>
@@ -43,7 +57,7 @@
     <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
         <h4 class="text-lg font-semibold text-gray-700 mb-4">Example</h4>
         <p class="text-gray-600 leading-relaxed mb-4">
-            In this example, we use the <span class="font-medium text-blue-600">ExhaustMap </span>
+            In this example, we use the <span class="font-medium text-blue-600">ExhaustMap </span> Operator <br>
             Imagine you have a button that triggers an HTTP request when clicked. You want to ensure that if the button
             is clicked multiple times in quick succession, only the first click triggers the request, and subsequent
             clicks are ignored until the request completes.
@@ -51,14 +65,15 @@
 
         <div class="flex gap-4">
             <div class="flex gap-2">
-                <button #start
-                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <button (click)="startOperator()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg
+                     transition duration-300 ease-in-out transform hover:scale-105">
                     Start
                 </button>
             </div>
-            <button (click)="stopOperator()"
-                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
-                Stop
+            <button (click)="clearOperator()" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 
+                ease-in-out transform hover:scale-105"
+                [ngClass]="isProcessing() ? 'cursor-not-allowed' : 'cursor-pointer'" [disabled]="isProcessing()">
+                Clear
             </button>
         </div>
     </div>
@@ -69,9 +84,10 @@
         <div class="mt-4 p-4 bg-white rounded-lg shadow-inner">
             @if(isProcessing()){
             <h1 class="text-gray-700 font-medium">Processing...</h1>
-            <h2 class="text-gray-700 font-medium">Yoyr multiple clicks on start button will be ignore. While processing current request</h2>
+            <h2 class="text-gray-700 font-medium">Your multiple clicks on start button will be ignore. While processing
+                current request</h2>
             }@else {
-                <h5 class="text-gray-700 font-medium">{{ value }}</h5>
+            <h5 class="text-gray-700 font-medium">{{ value }}</h5>
             }
         </div>
     </div>

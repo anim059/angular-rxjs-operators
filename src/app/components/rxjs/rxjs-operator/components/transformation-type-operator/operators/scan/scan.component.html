@@ -1,1 +1,111 @@
-<p>scan works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">Scan</h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for Buffer Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Scan Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">Scan</span> operator in RxJS is a transformation operator that
+            is used to accumulate values over time. It applies an accumulator function to each value emitted by the
+            source observable, passing the result of the accumulator function forward to the next invocation. This makes
+            it similar to the Array.prototype.reduce method in JavaScript, but for observables.
+            It's like reduce, but Emits the current state after each update, unlike reduce, which only emits the final
+            result.
+        </p>
+
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/scan.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Running Totals:</strong> Calculate running totals or cumulative
+                        values (e.g., sum, average).
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">State Management:</strong> Maintain and update a state over time
+                        (e.g., a shopping cart).
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Progressive Data Aggregation:</strong> Aggregate data incrementally
+                        as new values arrive.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Example Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Example</h4>
+        <p class="text-gray-600 leading-relaxed mb-4">
+            In this example, we use the <span class="font-medium text-blue-600">Scan</span>
+            Imagine you have an observable that emits items added to a shopping cart, and you want to maintain the total
+            cost of the cart.
+        </p>
+
+        <div class="flex gap-4">
+            <div class="flex gap-2">
+                <button (click)="startOperator()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition
+                     duration-300 ease-in-out transform hover:scale-105"
+                    [ngClass]="isProcessing() ? 'cursor-not-allowed' : 'cursor-pointer'" [disabled]="isProcessing()">
+                    Start
+                </button>
+            </div>
+            <button (click)="stopOperator()" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition 
+                duration-300 ease-in-out transform hover:scale-105"
+                [ngClass]="isProcessing() ? 'cursor-not-allowed' : 'cursor-pointer'" [disabled]="isProcessing()">
+                Stop
+            </button>
+        </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="mt-6">
+        <!-- Item Prices Section -->
+        <div class="mb-3">
+            <h1 class="text-gray-700 font-semibold text-lg">All the items price:</h1>
+            <!-- Loop through items -->
+            @for (item of items; track $index) {
+            <h6 class="text-gray-700 font-medium">{{ item.name }}: {{ item.price }}</h6>
+            }
+        </div>
+
+        <!-- Result Section -->
+        <h3 class="text-xl font-semibold text-gray-800">Result:</h3>
+        <div class="mt-4 p-4 bg-white rounded-lg shadow-inner">
+            <!-- Processing State -->
+            @if (isProcessing()) {
+            <h1 class="text-gray-700 font-medium">Getting responses</h1>
+            <h2 class="text-gray-700 font-medium">Processing...</h2>
+            }
+
+            <!-- Loop through values -->
+            @for (value of values; track $index) {
+            <h5 class="text-gray-700 font-medium">{{ value }}</h5>
+            }
+        </div>
+    </div>
+</div>

@@ -1,16 +1,18 @@
 import { Component, signal } from '@angular/core';
 import { Observable, concatMap, delay, of } from 'rxjs';
 
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'concat-map',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './concat-map.component.html',
   styleUrl: './concat-map.component.scss'
 })
 export class ConcatMapComponent {
 
-  sourceObservable = of(1, 2, 3);
+  sourceObservable = of(1, 2, 3, 4);
 
   resultObservable: any;
 
@@ -26,6 +28,7 @@ export class ConcatMapComponent {
   }
 
   startOperator(): void {
+    this.values = [];
     this.isProcessing.set(true);
     this.resultObservable = this.sourceObservable.pipe(
       concatMap((val) => {
@@ -34,16 +37,19 @@ export class ConcatMapComponent {
     );
     this.subscription = this.resultObservable.subscribe({
       next: (value: any) => {
-        this.isProcessing.set(false);
         this.values.push(value);
       },
       error: (error: any) => {
         console.error('Error:', error);
       },
+      complete:()=>{
+        this.isProcessing.set(false);
+      }
     });
   }
 
   stopOperator(): void {
+    this.isProcessing.set(false);
     this.subscription.unsubscribe();
     this.values = [];
   }
