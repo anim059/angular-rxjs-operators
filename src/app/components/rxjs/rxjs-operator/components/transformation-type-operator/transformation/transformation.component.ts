@@ -1,7 +1,8 @@
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+
 import { BufferComponent } from '../operators/buffer/buffer.component';
 import { BufferCountComponent } from '../operators/buffer-count/buffer-count.component';
 import { BufferTimeComponent } from '../operators/buffer-time/buffer-time.component';
-import { Component } from '@angular/core';
 import { ConcatMapComponent } from '../operators/concat-map/concat-map.component';
 import { ExhaustMapComponent } from '../operators/exhaust-map/exhaust-map.component';
 import { MapComponent } from '../operators/map/map.component';
@@ -18,10 +19,24 @@ import { WindowTimeComponent } from '../operators/window-time/window-time.compon
 @Component({
   selector: 'transformation',
   standalone: true,
-  imports: [BufferComponent, BufferCountComponent, BufferTimeComponent, ConcatMapComponent, ExhaustMapComponent, MapComponent, 
-    MergeMapComponent, MergeScanComponent, PairwiseComponent, ScanComponent, SwitchMapComponent, SwitchScanComponent, WindowComponent,
-    WindowCountComponent, WindowTimeComponent],
+  imports: [BufferComponent, BufferCountComponent, BufferTimeComponent, ConcatMapComponent, ExhaustMapComponent, MapComponent,
+    MergeMapComponent, MergeScanComponent, PairwiseComponent, ScanComponent, SwitchMapComponent, SwitchScanComponent],
   templateUrl: './transformation.component.html',
   styleUrl: './transformation.component.scss'
 })
-export class TransformationComponent { }
+export class TransformationComponent {
+
+  @ViewChildren('buffer, bufferCount, bufferTime, concatMap, exhaustMap, aMap, mergeMap, mergeScan, pairwise, scan, switchMap, switchScan')
+  componentElements!: QueryList<ElementRef>;
+
+  scrollTo(componentId: string) {
+    let element: ElementRef | undefined;
+    element = this.componentElements.find((el) => el.nativeElement.id === componentId);
+    console.log(element)
+    // Scroll to the element if found
+    if (element) {
+      element.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+}

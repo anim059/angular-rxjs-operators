@@ -17,7 +17,7 @@ export class RxjsOperatorComponent {
     },
     {
       name: 'join creation',
-      url: ''
+      url: 'join-creation'
     },
     {
       name: 'filtering',

@@ -6,26 +6,61 @@
         </span>
     </h1>
 
+    <!-- Navigation Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <button (click)="scrollTo('buffer')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Buffer</button>
+        <button (click)="scrollTo('bufferCount')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Buffer
+            Count</button>
+        <button (click)="scrollTo('bufferTime')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Buffer Time</button>
+        <button (click)="scrollTo('concatMap')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Concat Map</button>
+        <button (click)="scrollTo('exhaustMap')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Exhaust Map</button>
+        <button (click)="scrollTo('aMap')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Map</button>
+        <button (click)="scrollTo('mergeMap')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Merge Map</button>
+        <button (click)="scrollTo('mergeScan')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Merge Scan</button>
+        <button (click)="scrollTo('pairwise')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Pairwise</button>
+        <button (click)="scrollTo('scan')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Scan</button>
+        <button (click)="scrollTo('switchMap')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Switch Map</button>
+        <button (click)="scrollTo('switchScan')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Switch Scan</button>
+    </div>
+
     <!-- Content Sections -->
     <div class="space-y-8 max-w-full mx-auto">
         <!-- Buffer Section 1 -->
         <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
             <div class="flex flex-col gap-y-6 border-t border-gray-200 pt-4">
-                <buffer />
-                <buffer-count />
-                <buffer-time />
-                <concat-map />
-                <exhaust-map />
-                <a-map />
-                <merge-map />
-                <merge-scan />
-                <pairwise />
-                <scan />
-                <switch-map />
-                <switch-scan />
-                <window />
-                <window-count />
-                <window-time />
+                <div id="buffer" #buffer>
+                    <buffer></buffer>
+                </div>
+                <div id="bufferCount" #bufferCount><buffer-count></buffer-count></div>
+                <div id="bufferTime" #bufferTime><buffer-time></buffer-time></div>
+                <div id="concatMap" #concatMap><concat-map></concat-map></div>
+                <div id="exhaustMap" #exhaustMap><exhaust-map></exhaust-map></div>
+                <div id="aMap" #aMap><a-map></a-map></div>
+                <div id="mergeMap" #mergeMap><merge-map></merge-map></div>
+                <div id="mergeScan" #mergeScan><merge-scan></merge-scan></div>
+                <div id="pairwise" #pairwise>
+                    <pairwise></pairwise>
+                </div>
+                <div id="scan" #scan>
+                    <scan></scan>
+                </div>
+                <div id="switchMap" #switchMap><switch-map></switch-map></div>
+                <div id="switchScan" #switchScan><switch-scan></switch-scan></div>
+                <!-- <div id="window"><window /></div>
+                <div id="window-count"><window-count /></div>
+                <div id="window-time"><window-time /></div> -->
             </div>
         </div>
 

@@ -8,6 +8,10 @@ export const routes: Routes = [
             {
                 path: 'transformation',
                 loadComponent: () => import('./components/rxjs/rxjs-operator/components/transformation-type-operator/transformation/transformation.component').then((m) => m.TransformationComponent)
+            },
+            {
+                path: 'join-creation',
+                loadComponent: () => import('./components/rxjs/rxjs-operator/components/join-creation-type-operator/join-creation/join-creation.component').then((m) => m.JoinCreationComponent)
             }
         ]
     }
