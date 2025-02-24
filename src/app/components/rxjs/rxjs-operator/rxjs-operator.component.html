@@ -11,6 +11,7 @@
         @for (item of operatorType; track $index) {
         <div class="group h-40 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl 
         transition-all duration-300 cursor-pointer flex flex-col justify-center items-center relative overflow-hidden"
+        [ngClass]="activeRouteName === item.name ? 'border-2 border-blue-600' : ''"
              [routerLink]="[item.url]">
             <!-- Background Gradient on Hover -->
             <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 

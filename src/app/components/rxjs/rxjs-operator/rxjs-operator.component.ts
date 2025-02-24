@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'rxjs-operator',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './rxjs-operator.component.html',
   styleUrl: './rxjs-operator.component.scss'
 })
-export class RxjsOperatorComponent {
+export class RxjsOperatorComponent implements OnInit {
 
-  operatorType : {name: string, url: string}[] = [
+  router = inject(Router);
+
+  activatedRoute = inject(ActivatedRoute);
+
+  activeRouteName: string = '';
+
+  operatorType: { name: string, url: string }[] = [
     {
       name: 'creation',
       url: ''
@@ -52,4 +60,14 @@ export class RxjsOperatorComponent {
       url: ''
     }
   ];
+
+  ngOnInit(): void {
+    this.activeRouteName = this.operatorType.find((item) => item.url && this.router.url.includes(item.url))?.name || ''
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        debugger
+        this.activeRouteName = this.operatorType.find((item) => item.url && event.url.includes(item.url))?.name || ''
+      }
+    })
+  }
 }

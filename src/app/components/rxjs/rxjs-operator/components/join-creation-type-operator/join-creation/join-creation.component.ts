@@ -23,7 +23,6 @@ export class JoinCreationComponent {
   scrollTo(componentId: string) {
     let element: ElementRef | undefined;
     element = this.componentElements.find((el) => el.nativeElement.id === componentId);
-    console.log(element)
     // Scroll to the element if found
     if (element) {
       element.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
