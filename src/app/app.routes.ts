@@ -12,6 +12,10 @@ export const routes: Routes = [
             {
                 path: 'join-creation',
                 loadComponent: () => import('./components/rxjs/rxjs-operator/components/join-creation-type-operator/join-creation/join-creation.component').then((m) => m.JoinCreationComponent)
+            },
+            {
+                path: 'utility',
+                loadComponent: () => import('./components/rxjs/rxjs-operator/components/utility-type-operator/utility/utility.component').then((m) => m.UtilityComponent)
             }
         ]
     }

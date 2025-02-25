@@ -1,1 +1,92 @@
-<p>race works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">Race </h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for Race  Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Race Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">Race </span> operator in RxJS is used to compete between
+            multiple Observables. It subscribes to all the input Observables simultaneously, but as soon as one of them
+            emits a value, race unsubscribes from the others and only emits values from the "winning" Observable.
+        </p>
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/race.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Timeout Handling:</strong> Use race to implement a timeout for an
+                        Observable. If the source Observable doesn't emit within a specified time, a timeout Observable
+                        can "win" and emit an error or fallback value.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Load Balancing:</strong> Compete between multiple data sources
+                        (e.g., APIs) and use the fastest response.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Fallback Mechanism:</strong> Use the first Observable to emit a
+                        value and ignore the rest.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Example Section -->
+    <div>
+        <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+            <h4 class="text-lg font-semibold text-gray-700 mb-4">Example</h4>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                In this example, we use the <span class="font-medium text-blue-600">Race </span> operator.<br>
+                Imagine you have an API that give some response and you want to handle timeout issue. So with race
+                You can implement a timeout for an HTTP request or any other Observable.
+
+            </p>
+            <div class="flex gap-4">
+                <button (click)="startOperator()"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Start
+                </button>
+                <button (click)="stopOperator()"
+                    class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Stop
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="mt-6">
+            <h3 class="text-xl font-semibold text-gray-800">Result:</h3>
+            <div class="mt-4 p-4 bg-white rounded-lg shadow-inner">
+                @if(isProcessing()){
+                <h1 class="text-gray-700 font-medium">A timeout will occur if the response does not come within 3 seconds.</h1>
+                <h1 class="text-gray-700 font-medium">Getting responses in {{delay / 1000}} seconds</h1>
+                <h2 class="text-gray-700 font-medium">Processing...</h2>
+                }@else {
+                <h5 class="text-gray-700 font-medium">{{ result }}</h5>
+                }
+            </div>
+        </div>
+    </div>
+</div>

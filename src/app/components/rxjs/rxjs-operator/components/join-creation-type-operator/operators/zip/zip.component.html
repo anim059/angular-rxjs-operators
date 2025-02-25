@@ -1,1 +1,55 @@
-<p>zip works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">Zip </h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for Zip  Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Zip Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">Zip </span> operator in RxJS is a combination operator that
+            allows you to combine multiple observables by pairing their emissions in a strict sequence. It waits for
+            each observable to emit a value at the same index and then combines these values into an array (or using a
+            projection function, if provided). This is useful when you need to synchronize values from multiple
+            observables based on their order of emission.Once all observables have emitted a value at the current index,
+            zip combines these values into an array (or applies a projection function).The process repeats for the next
+            index, and so on. If any observable completes before the others, zip stops emitting values.
+        </p>
+
+        <div class="mb-6 mt-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Synchronizing Data:</strong> Combine data from multiple observables
+                        in a
+                        strict sequence (e.g., first name and last name).
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Parallel Tasks: </strong> Combine results from parallel tasks (e.g.,
+                        API requests).
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Data Aggregation: </strong> Aggregate data from multiple sources in
+                        a
+                        synchronized manner.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

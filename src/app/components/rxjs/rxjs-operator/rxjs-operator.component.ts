@@ -57,7 +57,7 @@ export class RxjsOperatorComponent implements OnInit {
     },
     {
       name: 'utility',
-      url: ''
+      url: 'utility'
     }
   ];
 
@@ -65,7 +65,6 @@ export class RxjsOperatorComponent implements OnInit {
     this.activeRouteName = this.operatorType.find((item) => item.url && this.router.url.includes(item.url))?.name || ''
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        debugger
         this.activeRouteName = this.operatorType.find((item) => item.url && event.url.includes(item.url))?.name || ''
       }
     })
