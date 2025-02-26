@@ -1,1 +1,57 @@
-<p>dematerialize works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">Dematerialize</h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for CombineLaDematerialize  Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Dematerialize Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">Dematerialize </span> operator in RxJS is a utility operator
+            that transforms a stream of notification objects (emitted by the materialize operator) back into their
+            original observable form. Essentially, it "undoes" the effect of the materialize operator by converting
+            notification objects (which represent next, error, and complete events) back into their original observable
+            emissions.
+        </p>
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/dematerialize.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Debugging and Inspection :</strong> Use materialize to inspect
+                        observable emissions as notification objects, then use dematerialize to restore the original
+                        observable.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Custom Operators:</strong> Build custom operators that work with
+                        notification objects and then restore the original observable.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Error Handling:</strong> Handle errors as notification objects and
+                        then restore the original observable.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,6 @@
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 
 import { DelayComponent } from '../operators/delay/delay.component';
-import { DelayWhenComponent } from '../operators/delay-when/delay-when.component';
 import { DematerializeComponent } from '../operators/dematerialize/dematerialize.component';
 import { MaterializeComponent } from '../operators/materialize/materialize.component';
 import { ObserveOnComponent } from '../operators/observe-on/observe-on.component';
@@ -15,14 +14,14 @@ import { ToArrayComponent } from '../operators/to-array/to-array.component';
 @Component({
   selector: 'app-utility',
   standalone: true,
-  imports: [DelayComponent, DelayWhenComponent, DematerializeComponent, MaterializeComponent, ObserveOnComponent,
+  imports: [DelayComponent, DematerializeComponent, MaterializeComponent, ObserveOnComponent,
     SubscribeOnComponent, TapComponent, TimeIntervalComponent, TimeoutComponent, TimestampComponent, ToArrayComponent],
   templateUrl: './utility.component.html',
   styleUrl: './utility.component.scss'
 })
 export class UtilityComponent {
 
-  @ViewChildren('delay, delayWhen, dematerialize, materialize, observeOn, subscribeOn, tap, timeInterval, timeout, timeStamp, toArray')
+  @ViewChildren('delay, dematerialize, materialize, observeOn, subscribeOn, tap, timeInterval, timeout, timeStamp, toArray')
   componentElements!: QueryList<ElementRef>;
 
   scrollTo(componentId: string) {

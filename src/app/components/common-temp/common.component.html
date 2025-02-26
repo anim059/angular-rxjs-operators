@@ -1,28 +1,24 @@
 <div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
     <!-- Operator Header -->
-    <h3 class="text-2xl font-semibold text-gray-800">Delay</h3>
+    <h3 class="text-2xl font-semibold text-gray-800">Test</h3>
 
     <!-- Description Section -->
     <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
         <div class="flex items-center gap-3 mb-4">
-            <!-- Icon for CombineLaDelay  Operator -->
+            <!-- Icon for CombineLatest  Operator -->
             <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
                 </path>
             </svg>
-            <h4 class="text-lg font-semibold text-gray-700">What is the Delay Operator?</h4>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Test Operator?</h4>
         </div>
         <p class="text-gray-600 leading-relaxed">
-            The <span class="font-medium text-blue-600">Delay </span> operator in RxJS is a utility operator that shifts
-            the emissions of a source observable forward in time by a specified duration. It introduces a delay before
-            emitting each value from the source observable. This is useful for scenarios where you need to simulate a
-            delay, such as in animations, timed operations, or rate-limiting.
-            It takes one argument which is the delay duration in milliseconds.
+            The <span class="font-medium text-blue-600">Test </span> operator 
         </p>
         <div class="mt-4 mb-5">
             <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
-            <a href="https://rxjs.dev/assets/images/marble-diagrams/delay.svg" target="_blank"
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/combineLatest.png" target="_blank"
                 class="text-blue-600">Link</a>
         </div>
 
@@ -32,22 +28,19 @@
                 <li class="flex items-start text-gray-700 leading-relaxed">
                     <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
                     <span>
-                        <strong class="font-medium">Simulating Delays:</strong> Simulate delays in data streams (e.g.,
-                        API responses, user interactions).
+                        <strong class="font-medium"></strong> 
                     </span>
                 </li>
                 <li class="flex items-start text-gray-700 leading-relaxed">
                     <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
                     <span>
-                        <strong class="font-medium">Timed Operations:</strong> Introduce delays in animations or timed
-                        sequences.
+                        <strong class="font-medium"></strong>
                     </span>
                 </li>
                 <li class="flex items-start text-gray-700 leading-relaxed">
                     <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
                     <span>
-                        <strong class="font-medium">Rate Limiting:</strong> Space out emissions to avoid overwhelming
-                        downstream operations.
+                        <strong class="font-medium"></strong> 
                     </span>
                 </li>
             </ul>
@@ -58,9 +51,8 @@
     <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
         <h4 class="text-lg font-semibold text-gray-700 mb-4">Example</h4>
         <p class="text-gray-600 leading-relaxed mb-4">
-            In this example, we use the <span class="font-medium text-blue-600">Delay </span> operator <br>
-            Suppose you have an observable that emits multiple values, and you want to delay emission by a fixed
-            duration.
+            In this example, we use the <span class="font-medium text-blue-600">Test </span> operator <br>
+            Imagine 
         </p>
         <div class="flex gap-4">
             <button (click)="startOperator()"
@@ -78,13 +70,7 @@
     <div class="mt-6">
         <h3 class="text-xl font-semibold text-gray-800">Result:</h3>
         <div class="mt-4 p-6 bg-white rounded-lg shadow-inner">
-            @if(!isProcessing()){
-                <p class="text-gray-700">
-                    {{ data }}
-                </p>
-            }@else {
-                <h2 class="text-gray-700 font-medium">Processing...</h2>
-            }
+            
         </div>
     </div>
 </div>

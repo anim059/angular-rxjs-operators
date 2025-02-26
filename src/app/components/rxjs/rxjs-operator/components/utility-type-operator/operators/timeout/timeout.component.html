@@ -1,1 +1,90 @@
-<p>timeout works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">Timeout</h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for CombineLaTimeout  Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Timeout Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">Timeout </span> operator in RxJS is a utility operator that
+            allows you to enforce a time limit on the emissions of a source observable. If the source observable does
+            not emit a value within the specified time duration, the timeout operator will raise an error. This is
+            useful for scenarios where you need to ensure that an observable emits values within a certain timeframe,
+            such as handling network requests or user interactions.<br>
+            Timeout operator takes one or two arguments as input: due and scheduler (optional).
+        </p>
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/timeout.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Network Requests:</strong> Ensure that API requests complete within
+                        a specified time.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">User Interactions:</strong> Handle user input within a certain
+                        timeframe (e.g., typeahead search).
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Task Timeouts: </strong> Enforce time limits on long-running tasks.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Example Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Example : Timeout for API Requests</h4>
+        <p class="text-gray-600 leading-relaxed mb-4">
+            In this example, we use the <span class="font-medium text-blue-600">Timeout </span> operator <br>
+            Imagine you want to make an API request and ensure that it completes within 3 seconds else raise an timeout error.
+        </p>
+        <div class="flex gap-4">
+            <button (click)="startOperator()"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Start
+            </button>
+            <button (click)="stopOperator()"
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Stop
+            </button>
+        </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="mt-6">
+        <h3 class="text-xl font-semibold text-gray-800">Result:</h3>
+        <div class="mt-4 p-6 bg-white rounded-lg shadow-inner">
+            @if(isProcessing()){
+            <h1 class="text-gray-700 font-medium">A timeout will occur if the response does not come within 3 seconds.
+            </h1>
+            <h1 class="text-gray-700 font-medium">Timeout threshold is random. Current delay: {{ delay / 1000 }} seconds</h1>
+            <h2 class="text-gray-700 font-medium">Processing...</h2>
+            }@else {
+            <h5 class="text-gray-700 font-medium">{{ result }}</h5>
+            }
+        </div>
+    </div>
+</div>
