@@ -1,1 +1,120 @@
-<p>observe-on works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">ObserveOn </h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for CombineLaObserveOn   Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the ObserveOn Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">ObserveOn </span> operator in RxJS is a utility operator that
+            allows you to specify the scheduler on which the notifications (next, error, and complete) of an observable
+            will be delivered. This is useful for controlling the execution context of observable emissions, such as
+            running code on a specific thread, delaying emissions, or batching updates.It takes one argument
+            scheduler which the observable's notifications will be delivered. ensures that all notifications (next,
+            error, and complete) from the source observable are emitted on the specified scheduler.This allows you to
+            control where and when the observable's emissions are processed (e.g., on the main thread, a background
+            thread, or with a delay).
+        </p>
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/combineLaObserveOn .png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">UI Updates:</strong> Ensure that UI updates are performed on the
+                        main thread (e.g., in Angular or React).
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Asynchronous Execution:</strong> Schedule observable emissions to
+                        run asynchronously.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Batch Processing:</strong> Batch emissions together for efficient
+                        processing.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Example Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Example</h4>
+        <p class="text-gray-600 leading-relaxed mb-4">
+            In this example, we use the <span class="font-medium text-blue-600">ObserveOn </span> operator <br>
+            Imagine you want to ensure that observable emissions are processed on a specific scheduler (e.g.,
+            asyncScheduler for asynchronous execution), observeOn is necessary. Using observeOn with asyncScheduler
+            moves emissions to the asynchronous context. In this case, the emissions are processed asynchronously,
+            similar to using setTimeout.
+        </p>
+        <div class="flex gap-4">
+            <button (click)="startWithOutObserveOnOperator()"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Start withOut ObserveOn
+            </button>
+            <button (click)="startWithObserveOnOperator()"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Start with ObserveOn
+            </button>
+            <button (click)="clearOperator()"
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Clear
+            </button>
+        </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="mt-6">
+        <h3 class="text-xl font-semibold text-gray-800">Result:</h3>
+        <div class="mt-4 p-6 bg-white rounded-lg shadow-inner">
+            <div class="p-4">
+                <h2 class="text-xl font-bold mb-4">ObserveOn(asyncScheduler) Demo</h2>
+                <div class="mt-6 grid grid-cols-2 gap-4">
+                    <!-- Synchronous Logs -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Synchronous Logs</h3>
+                        <div class="space-y-2">
+                            @for (log of synchronousLogs; track $index) {
+                            <div class="p-2 bg-green-100 rounded">
+                                {{ log }}
+                            </div>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Asynchronous Logs -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Asynchronous Logs</h3>
+                        <div class="space-y-2">
+                            @for (log of asynchronousLogs; track $index) {
+                            <div class="p-2 bg-purple-100 rounded">
+                                {{ log }}
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

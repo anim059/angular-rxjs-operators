@@ -1,1 +1,60 @@
-<p>subscribe-on works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">SubscribeOn </h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for CombineLaSubscribeOn   Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the SubscribeOn Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">SubscribeOn </span> operator in RxJS is a utility operator that
+            allows you to specify the scheduler on which the subscription to an observable will occur. This is useful
+            for controlling the execution context of the subscription logic, such as running subscription setup on a
+            specific thread or delaying the subscription.It ensures that the subscription logic (e.g., the code inside
+            the subscribe method) is executed on the specified scheduler.This allows you to control where and when the
+            subscription happens (e.g., on the main thread, a background thread, or with a delay).
+            The subscribeOn operator controls the execution context of the subscription logic, not the emissions of the
+            observable. Common schedulers include: asyncScheduler, queueScheduler, asapScheduler,
+            animationFrameScheduler.
+        </p>
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/subscribeOn.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Background Operations:</strong> Perform subscription logic on a
+                        background thread (e.g., for network requests or file I/O).
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Delayed Subscription: </strong> Delay the subscription to an
+                        observable.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Thread Management:</strong> Ensure that subscription logic runs on
+                        the correct thread (e.g., in Angular or React).
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
