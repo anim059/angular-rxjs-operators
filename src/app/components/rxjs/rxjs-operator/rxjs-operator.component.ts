@@ -33,7 +33,7 @@ export class RxjsOperatorComponent implements OnInit {
     },
     {
       name: 'join',
-      url: ''
+      url: 'join'
     },
     {
       name: 'boolean',

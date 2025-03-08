@@ -20,7 +20,8 @@
             for each observable to emit at least one value. Whenever any of the observables emit a new value,
             combineLatest takes the latest value from each observable and emits them together as an array or as a
             combined object.If any observable hasn't emitted a value yet, combineLatest will not emit anything until all
-            observables have emitted at least one value.
+            observables have emitted at least one value. It is used when you want to combine a fixed number of
+            observables and react to changes in any of them.
         </p>
         <div class="mt-4 mb-5">
             <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>

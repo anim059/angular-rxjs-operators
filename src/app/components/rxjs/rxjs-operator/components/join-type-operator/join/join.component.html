@@ -1,0 +1,57 @@
+<div class="p-1 lg:p-8 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Header -->
+    <h1 class="font-bold text-center text-3xl text-gray-800 mb-12">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            Join Creation
+        </span>
+    </h1>
+
+    <!-- Navigation Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <button (click)="scrollTo('combineLatestAll')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Combine
+            Latest</button>
+        <button (click)="scrollTo('concatAll')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">ConcatAll</button>
+        <button (click)="scrollTo('mergeAll')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">MergeAll</button>
+        <button (click)="scrollTo('switchAll')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">SwitchAll</button>
+        <button (click)="scrollTo('exhaustAll')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">ExhaustAll</button>
+        <button (click)="scrollTo('startWith')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">StartWith</button>
+        <button (click)="scrollTo('withLatestFrom')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">WithLatestFrom</button>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="space-y-8 max-w-full mx-auto">
+        <!-- Buffer Section 1 -->
+        <div class="bg-white p-1 lg:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="flex flex-col gap-y-6 border-t border-gray-200 pt-4">
+                <div id="combineLatestAll" #combineLatestAll>
+                    <combine-latest-all></combine-latest-all>
+                </div>
+                <div id="concatAll" #concatAll>
+                    <concat-all></concat-all>
+                </div>
+                <div id="mergeAll" #mergeAll>
+                    <merge-all></merge-all>
+                </div>
+                <div id="switchAll" #switchAll>
+                    <switch-all></switch-all>
+                </div>
+                <div id="exhaustAll" #exhaustAll>
+                    <exhaust-all></exhaust-all>
+                </div>
+                <div id="startWith" #startWith>
+                    <start-with></start-with>
+                </div>
+                <div id="withLatestFrom" #withLatestFrom>
+                    <with-latest-from></with-latest-from>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
