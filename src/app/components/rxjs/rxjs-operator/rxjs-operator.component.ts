@@ -37,15 +37,15 @@ export class RxjsOperatorComponent implements OnInit {
     },
     {
       name: 'boolean',
-      url: ''
+      url: 'boolean'
     },
     {
       name: 'error handling',
-      url: ''
+      url: 'error-handling'
     },
     {
       name: 'mathematical',
-      url: ''
+      url: 'mathematical'
     },
     {
       name: 'multicasting',

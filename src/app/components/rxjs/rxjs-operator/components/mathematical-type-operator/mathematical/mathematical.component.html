@@ -1,0 +1,41 @@
+<div class="p-1 lg:p-8 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Header -->
+    <h1 class="font-bold text-center text-3xl text-gray-800 mb-12">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            Mathematical
+        </span>
+    </h1>
+
+    <!-- Navigation Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <button (click)="scrollTo('count')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Count</button>
+        <button (click)="scrollTo('max')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Max</button>
+        <button (click)="scrollTo('min')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Min</button>
+        <button (click)="scrollTo('reduce')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Reduce</button>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="space-y-8 max-w-full mx-auto">
+        <!-- Buffer Section 1 -->
+        <div class="bg-white p-1 lg:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="flex flex-col gap-y-6 border-t border-gray-200 pt-4">
+                <div id="count" #count>
+                    <count></count>
+                </div>
+                <div id="max" #max>
+                    <max></max>
+                </div>
+                <div id="min" #min>
+                    <min></min>
+                </div>
+                <div id="reduce" #reduce>
+                    <reduce></reduce>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

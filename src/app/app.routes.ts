@@ -20,6 +20,18 @@ export const routes: Routes = [
             {
                 path: 'join',
                 loadComponent: () => import('./components/rxjs/rxjs-operator/components/join-type-operator/join/join.component').then((m) => m.JoinComponent)
+            },
+            {
+                path: 'mathematical',
+                loadComponent: () => import('./components/rxjs/rxjs-operator/components/mathematical-type-operator/mathematical/mathematical.component').then((m) => m.MathematicalComponent)
+            },
+            {
+                path: 'boolean',
+                loadComponent: () => import('./components/rxjs/rxjs-operator/components/boolean-type-operator/boolean/boolean.component').then((m) => m.BooleanComponent)
+            },
+            {
+                path: 'error-handling',
+                loadComponent: () => import('./components/rxjs/rxjs-operator/components/error-handling-type-operator/error-handling/error-handling.component').then((m) => m.ErrorHandlingComponent)
             }
         ]
     }
