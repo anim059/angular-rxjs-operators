@@ -1,1 +1,47 @@
-<p>boolean works!</p>
+<div class="p-1 lg:p-8 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- Header -->
+    <h1 class="font-bold text-center text-3xl text-gray-800 mb-12">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            Boolean & Conditional
+        </span>
+    </h1>
+
+    <!-- Navigation Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <button (click)="scrollTo('defaultEmpty')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Default
+            Empty</button>
+        <button (click)="scrollTo('every')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Every</button>
+        <button (click)="scrollTo('find')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Find</button>
+        <button (click)="scrollTo('findIndex')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Find Index</button>
+        <button (click)="scrollTo('isEmpty')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Is Empty</button>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="space-y-8 max-w-full mx-auto">
+        <!-- Buffer Section 1 -->
+        <div class="bg-white p-1 lg:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div class="flex flex-col gap-y-6 border-t border-gray-200 pt-4">
+                <div id="defaultEmpty" #defaultEmpty>
+                    <default-if-empty></default-if-empty>
+                </div>
+                <div id="every" #every>
+                    <every></every>
+                </div>
+                <div id="find" #find>
+                    <find></find>
+                </div>
+                <div id="findIndex" #findIndex>
+                    <find-index></find-index>
+                </div>
+                <div id="isEmpty" #isEmpty>
+                    <is-empty></is-empty>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

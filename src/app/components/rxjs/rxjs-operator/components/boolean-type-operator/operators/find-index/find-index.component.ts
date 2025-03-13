@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-find-index',
+  selector: 'find-index',
   standalone: true,
   imports: [],
   templateUrl: './find-index.component.html',

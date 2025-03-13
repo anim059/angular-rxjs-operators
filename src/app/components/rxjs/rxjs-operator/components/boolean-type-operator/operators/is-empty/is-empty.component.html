@@ -1,1 +1,58 @@
-<p>is-empty works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">Is Empty</h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for CombineLaIs Empty  Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Is Empty Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">Is Empty </span> operator in rxjs is used to
+            Emits false if the input Observable emits any values, or emits true if the input Observable completes
+            without emitting any values. It transforms an Observable that emits values into an Observable that emits a
+            single boolean value representing whether or not any values were emitted by the source Observable. As soon
+            as the source Observable emits a value, isEmpty will emit a false and complete. If the source Observable
+            completes having not emitted anything, isEmpty will emit a true and complete.
+        </p>
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/isEmpty.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Checking If a Data Stream Has Values: </strong> Useful when
+                        determining if an API response or data stream is empty.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Conditional Logic in Streams:</strong> Perform different actions
+                        based on whether an observable emits data.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Handling Empty Results in UI: </strong> Show an "empty state"
+                        message if an observable doesn't emit any values.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
