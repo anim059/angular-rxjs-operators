@@ -32,6 +32,10 @@ export const routes: Routes = [
             {
                 path: 'error-handling',
                 loadComponent: () => import('./components/rxjs/rxjs-operator/components/error-handling-type-operator/error-handling/error-handling.component').then((m) => m.ErrorHandlingComponent)
+            },
+            {
+                path: 'multicast',
+                loadComponent: () => import('./components/rxjs/rxjs-operator/components/multicasting-type-operator/multicast/multicast.component').then((m) => m.MulticastComponent)
             }
         ]
     }

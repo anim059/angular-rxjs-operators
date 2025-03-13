@@ -2,16 +2,17 @@
     <!-- Header -->
     <h1 class="font-bold text-center text-3xl text-gray-800 mb-12">
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-            Error Handling
+            MultiCast
         </span>
     </h1>
 
     <!-- Navigation Buttons -->
     <div class="flex flex-wrap justify-center gap-4 mb-8">
-        <button (click)="scrollTo('catchError')"
-            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Catch Error</button>
-        <button (click)="scrollTo('retry')"
-            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Retry</button>
+        <button (click)="scrollTo('share')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Share</button>
+        <button (click)="scrollTo('shareReplay')"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Share
+            Replay</button>
     </div>
 
     <!-- Content Sections -->
@@ -19,11 +20,11 @@
         <!-- Buffer Section 1 -->
         <div class="bg-white p-1 lg:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
             <div class="flex flex-col gap-y-6 border-t border-gray-200 pt-4">
-                <div id="catchError" #catchError>
-                    <catch-error></catch-error>
+                <div id="share" #share>
+                    <share></share>
                 </div>
-                <div id="retry" #retry>
-                    <retry></retry>
+                <div id="shareReplay" #shareReplay>
+                    <share-replay></share-replay>
                 </div>
             </div>
         </div>

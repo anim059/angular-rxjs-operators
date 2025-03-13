@@ -1,1 +1,87 @@
-<p>retry works!</p>
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">Retry</h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for Retry  Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Retry Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">Retry </span> operator is used to automatically re-subscribe to
+            an observable when an error occurs. Instead of failing immediately, it retries the observable a specified
+            number of times before finally propagating the error. If count inside retry function is not specified
+            then it will retry infinitely
+        </p>
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/retry.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Handling Temporary Failures:</strong> Useful for unstable network
+                        requests or API calls.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Enhancing User Experience: </strong> Helps prevent UI errors by
+                        retrying before showing failure messages.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Error Resilience in Streams: </strong> Keeps observables running
+                        instead of failing immediately.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Example Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Example</h4>
+        <p class="text-gray-600 leading-relaxed mb-4">
+            In this example, we use the <span class="font-medium text-blue-600">Retry </span> operator <br>
+            Imagine Retrying an Observable a Fixed Number of Times. If it gets value 5 then it will retry.
+        </p>
+        <div class="flex gap-4">
+            <button (click)="startOperator()"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Start
+            </button>
+            <button (click)="stopOperator()"
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Stop
+            </button>
+        </div>
+    </div>
+
+    <!-- Result Section -->
+    <div class="mt-6">
+        <h3 class="text-xl font-semibold text-gray-800">Result:</h3>
+        <div class="mt-4 p-6 bg-white rounded-lg shadow-inner">
+            @if(isProcessing()){
+            <h2 class="text-gray-700 font-medium">Processing...</h2>
+            }
+            @for (result of results; track $index) {
+            <h5 class="text-gray-700 font-medium">{{ result }}</h5>
+            }
+        </div>
+    </div>
+</div>

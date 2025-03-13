@@ -49,7 +49,7 @@ export class RxjsOperatorComponent implements OnInit {
     },
     {
       name: 'multicasting',
-      url: ''
+      url: 'multicast'
     },
     {
       name: 'transformation',

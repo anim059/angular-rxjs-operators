@@ -1,0 +1,91 @@
+<div class="space-y-6 p-6 bg-gray-50 rounded-lg shadow-md border border-gray-300">
+    <!-- Operator Header -->
+    <h3 class="text-2xl font-semibold text-gray-800">Share</h3>
+
+    <!-- Description Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="flex items-center gap-3 mb-4">
+            <!-- Icon for Share  Operator -->
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+            </svg>
+            <h4 class="text-lg font-semibold text-gray-700">What is the Share Operator?</h4>
+        </div>
+        <p class="text-gray-600 leading-relaxed">
+            The <span class="font-medium text-blue-600">Share </span> operator turns a cold observable into a hot
+            observable by sharing a single subscription among multiple subscribers. It allows multiple observers to
+            receive the same emissions without creating a new subscription each time.
+
+            In short, share() multicasts the observable and refcounts it (subscribes when the first observer arrives and
+            unsubscribes when the last observer leaves).Automatically manages subscriptions (subscribes on the first
+            observer, unsubscribes when all observers leave).
+
+            Unlike shareReplay operator, SHARE operator shares the subscription but does not cache data. If all
+            subscribers unsubscribe,
+            new ones will trigger a fresh API request.
+        </p>
+        <div class="mt-4 mb-5">
+            <h3 class="text-base font-semibold text-gray-700">Marble Diagram Image Link</h3>
+            <a href="https://rxjs.dev/assets/images/marble-diagrams/share.png" target="_blank"
+                class="text-blue-600">Link</a>
+        </div>
+
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Common Use Cases:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Avoiding Duplicate Subscriptions: </strong> Prevent multiple
+                        executions of expensive operations (e.g., API calls, WebSocket connections).
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Converting Cold to Hot Observables: </strong> Useful when you want
+                        multiple subscribers to share the same emitted values.
+                    </span>
+                </li>
+                <li class="flex items-start text-gray-700 leading-relaxed">
+                    <span class="shrink-0 w-1.5 h-1.5 bg-gray-400 rounded-full mt-2.5 mr-3"></span>
+                    <span>
+                        <strong class="font-medium">Optimizing Performance in Angular Services:</strong> Ensures HTTP
+                        requests are shared instead of creating multiple duplicate requests.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Example Section -->
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+        <h4 class="text-lg font-semibold text-gray-700 mb-4">Example</h4>
+        <p class="text-gray-600 leading-relaxed mb-4">
+            In this example, we use the <span class="font-medium text-blue-600">Share </span> operator <br>
+            Imagine you want to share a http api response across multiple subscribers. Where only one request is made,
+            and
+            All subscribers share the response. Here we have two subscribers. You can see the difference between the two
+            in the
+            browser network tab.When you click start without share two request are made for each subscriber.
+            But when you click start with share only one request is made for both subscribers.
+        </p>
+        <div class="flex gap-4">
+            <button (click)="startOperator2()"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Start without share
+            </button>
+            <button (click)="startOperator1()"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Start with share
+            </button>
+            <button (click)="stopOperator()"
+                class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Stop
+            </button>
+        </div>
+    </div>
+
+</div>
