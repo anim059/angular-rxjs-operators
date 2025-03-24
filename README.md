@@ -1,27 +1,36 @@
-# RxjsOperatorExample
+# RxJS Operators Playground
+Welcome to RxJS Operators Playground, a comprehensive resource for learning some critical RxJS operators with real-world examples and use cases.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+⚠️ Note: This project is still a work in progress. Features are being actively developed and improved. Feel free to contribute or provide feedback!
 
-## Development server
+# 🚀 About This Project
+This project is designed to provide a way to explore RxJS operators. It includes a fully functional website where each operator is demonstrated with:
+- A detailed explanation
+- A code example
+- A real-world use case
+- A marble diagram visualization image which is taken from the RxJS website.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# 🏗️ Technologies Used
+- Angular (Frontend Framework)
+- RxJS (Reactive Programming Library)
+- TypeScript (Programming Language)
+- TailwindCSS (For Styling)
 
-## Code scaffolding
+# 🖼️ Project Demo
+Here’s a preview of the project in action:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+# 📦 Installation
+To run this project locally:
+```
+# Clone the repository
+git clone https://github.com/anim059/angular-rxjs-operators.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Install dependencies
+npm install
 
-## Running unit tests
+# Start the development server
+npm start
+```
+### [RxJS Operators Documentation](https://rxjs.dev/guide/operators)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
