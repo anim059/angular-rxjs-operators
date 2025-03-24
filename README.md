@@ -18,7 +18,7 @@ This project is designed to provide a way to explore RxJS operators. It includes
 
 # 🖼️ Project Demo
 Here’s a preview of the project in action:
-
+<img src="https://github.com/anim059/angular-rxjs-operators/blob/master/public/image.png" width="500" height="300" alt="project demo"> 
 
 # 📦 Installation
 To run this project locally:
